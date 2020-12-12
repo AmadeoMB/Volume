@@ -55,11 +55,9 @@
             this.tabSphere = new System.Windows.Forms.TabPage();
             this.tabPyramid = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.FormulaGroup = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.txtVolumeCylinder = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -73,11 +71,29 @@
             this.txtTCylinder = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtVolumeSphere = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtSurfaceSphere = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.btnCountSphere = new System.Windows.Forms.Button();
+            this.txtRSphere = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabCone.SuspendLayout();
             this.FormulaBox.SuspendLayout();
             this.tabCylinder.SuspendLayout();
+            this.tabSphere.SuspendLayout();
             this.FormulaGroup.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -348,6 +364,18 @@
             // 
             // tabSphere
             // 
+            this.tabSphere.Controls.Add(this.label17);
+            this.tabSphere.Controls.Add(this.txtVolumeSphere);
+            this.tabSphere.Controls.Add(this.label18);
+            this.tabSphere.Controls.Add(this.txtSurfaceSphere);
+            this.tabSphere.Controls.Add(this.label19);
+            this.tabSphere.Controls.Add(this.label20);
+            this.tabSphere.Controls.Add(this.label21);
+            this.tabSphere.Controls.Add(this.btnCountSphere);
+            this.tabSphere.Controls.Add(this.txtRSphere);
+            this.tabSphere.Controls.Add(this.label22);
+            this.tabSphere.Controls.Add(this.groupBox1);
+            this.tabSphere.Controls.Add(this.panel3);
             this.tabSphere.Location = new System.Drawing.Point(4, 29);
             this.tabSphere.Name = "tabSphere";
             this.tabSphere.Size = new System.Drawing.Size(792, 417);
@@ -372,14 +400,6 @@
             this.label4.Size = new System.Drawing.Size(198, 20);
             this.label4.TabIndex = 4;
             this.label4.Text = "Volume = (1/3) * surface * t";
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::Volume.Properties.Resources.Cone;
-            this.panel1.Location = new System.Drawing.Point(8, 6);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(359, 403);
-            this.panel1.TabIndex = 0;
             // 
             // FormulaGroup
             // 
@@ -409,15 +429,6 @@
             this.label6.Size = new System.Drawing.Size(184, 20);
             this.label6.TabIndex = 3;
             this.label6.Text = "Surface = 2 * π * r * (r + t)";
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::Volume.Properties.Resources.Cylinder;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(8, 7);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(359, 403);
-            this.panel2.TabIndex = 8;
             // 
             // label7
             // 
@@ -541,6 +552,157 @@
             this.label14.TabIndex = 18;
             this.label14.Text = "t : ";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Location = new System.Drawing.Point(376, 7);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(408, 149);
+            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Formula";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(122, 94);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(164, 20);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "Volume =4/3 * π * r ^ 3";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(122, 41);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(157, 20);
+            this.label16.TabIndex = 3;
+            this.label16.Text = "Surface = 4 * π * r ^ 2";
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::Volume.Properties.Resources.Cone;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel1.Location = new System.Drawing.Point(8, 6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(359, 403);
+            this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::Volume.Properties.Resources.Cylinder;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(8, 7);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(359, 403);
+            this.panel2.TabIndex = 8;
+            // 
+            // panel3
+            // 
+            this.panel3.BackgroundImage = global::Volume.Properties.Resources.Sphere;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel3.Location = new System.Drawing.Point(8, 7);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(359, 403);
+            this.panel3.TabIndex = 10;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(714, 377);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(46, 20);
+            this.label17.TabIndex = 40;
+            this.label17.Text = "cm^3";
+            // 
+            // txtVolumeSphere
+            // 
+            this.txtVolumeSphere.Enabled = false;
+            this.txtVolumeSphere.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVolumeSphere.Location = new System.Drawing.Point(508, 367);
+            this.txtVolumeSphere.Name = "txtVolumeSphere";
+            this.txtVolumeSphere.Size = new System.Drawing.Size(200, 35);
+            this.txtVolumeSphere.TabIndex = 39;
+            this.txtVolumeSphere.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(714, 318);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(46, 20);
+            this.label18.TabIndex = 38;
+            this.label18.Text = "cm^2";
+            // 
+            // txtSurfaceSphere
+            // 
+            this.txtSurfaceSphere.Enabled = false;
+            this.txtSurfaceSphere.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSurfaceSphere.Location = new System.Drawing.Point(508, 308);
+            this.txtSurfaceSphere.Name = "txtSurfaceSphere";
+            this.txtSurfaceSphere.Size = new System.Drawing.Size(200, 35);
+            this.txtSurfaceSphere.TabIndex = 37;
+            this.txtSurfaceSphere.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(389, 370);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(113, 29);
+            this.label19.TabIndex = 36;
+            this.label19.Text = "Volume : ";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(389, 311);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(113, 29);
+            this.label20.TabIndex = 35;
+            this.label20.Text = "Surface : ";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(583, 168);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(30, 20);
+            this.label21.TabIndex = 34;
+            this.label21.Text = "cm";
+            // 
+            // btnCountSphere
+            // 
+            this.btnCountSphere.Location = new System.Drawing.Point(665, 236);
+            this.btnCountSphere.Name = "btnCountSphere";
+            this.btnCountSphere.Size = new System.Drawing.Size(119, 50);
+            this.btnCountSphere.TabIndex = 33;
+            this.btnCountSphere.Text = "Count";
+            this.btnCountSphere.UseVisualStyleBackColor = true;
+            this.btnCountSphere.Click += new System.EventHandler(this.btnCountSphere_Click);
+            // 
+            // txtRSphere
+            // 
+            this.txtRSphere.Location = new System.Drawing.Point(426, 165);
+            this.txtRSphere.Name = "txtRSphere";
+            this.txtRSphere.Size = new System.Drawing.Size(150, 26);
+            this.txtRSphere.TabIndex = 32;
+            this.txtRSphere.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(390, 168);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(26, 20);
+            this.label22.TabIndex = 31;
+            this.label22.Text = "r : ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -556,8 +718,12 @@
             this.FormulaBox.PerformLayout();
             this.tabCylinder.ResumeLayout(false);
             this.tabCylinder.PerformLayout();
+            this.tabSphere.ResumeLayout(false);
+            this.tabSphere.PerformLayout();
             this.FormulaGroup.ResumeLayout(false);
             this.FormulaGroup.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -609,6 +775,20 @@
         private System.Windows.Forms.TextBox txtTCylinder;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txtVolumeSphere;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtSurfaceSphere;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button btnCountSphere;
+        private System.Windows.Forms.TextBox txtRSphere;
+        private System.Windows.Forms.Label label22;
     }
 }
 
