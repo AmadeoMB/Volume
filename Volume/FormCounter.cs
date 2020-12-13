@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Volume
 {
-    public partial class Form1 : Form
+    public partial class FormCounter : Form
     {
-        public Form1()
+        public FormCounter()
         {
             InitializeComponent();
         }
@@ -39,6 +39,8 @@ namespace Volume
                 number.Equals('8')
                 ||
                 number.Equals('9')
+                ||
+                number.Equals(',')
                 )
             {
                 return true;
@@ -48,6 +50,10 @@ namespace Volume
 
         private void btnCount_Click(object sender, EventArgs e)
         {
+            txtT.Text = txtT.Text.Replace(".", ",");
+            txtR.Text = txtR.Text.Replace(".", ",");
+            txtS.Text = txtS.Text.Replace(".", ",");
+
             for (int i = 0; i < txtR.TextLength; i++)
             {
                 if (!checkNumber(txtR.Text[i]))
@@ -129,7 +135,7 @@ namespace Volume
 
             Double surface = Math.PI * r * (r + s);
             txtSurface.Text = surface.ToString("##.###");
-            Double volume = (surface * t)/3;
+            Double volume = (Math.PI * Math.Pow(r, 2) * t) / 3;
             txtVolume.Text = volume.ToString("##.###");
         }
 
@@ -146,6 +152,9 @@ namespace Volume
                 MessageBox.Show("Please input value t");
                 return;
             }
+
+            txtTCylinder.Text = txtTCylinder.Text.Replace(".", ",");
+            txtRCylinder.Text = txtRCylinder.Text.Replace(".", ",");
 
             for (int i = 0; i < txtRCylinder.TextLength; i++)
             {
@@ -181,13 +190,113 @@ namespace Volume
                 MessageBox.Show("Please input value r");
                 return;
             }
+            
+            txtRSphere.Text = txtRSphere.Text.Replace(".", ",");
+
+            for (int i = 0; i < txtRSphere.TextLength; i++)
+            {
+                if (!checkNumber(txtRSphere.Text[i]))
+                {
+                    MessageBox.Show("Please input numbers on r");
+                    return;
+                }
+            }
 
             Double r = Convert.ToDouble(txtRSphere.Text);
 
             Double surface = 4 * Math.PI * Math.Pow(r, 2);
             txtSurfaceSphere.Text = surface.ToString("##.###");
-            Double volume = (4 / 3) * Math.PI * Math.Pow(r, 3);
+            Double volume = (4 * Math.PI * Math.Pow(r, 3))/3;
             txtVolumeSphere.Text = volume.ToString("##.###");
+        }
+
+        private void btnCountPyramid_Click(object sender, EventArgs e)
+        {
+            if (txtLengthPyramid.TextLength < 1)
+            {
+                MessageBox.Show("Please input value Length");
+                return;
+            }
+
+            if (txtWidthPyramid.TextLength < 1)
+            {
+                MessageBox.Show("Please input value Width");
+                return;
+            }
+
+            if (txtHeightPyramid.TextLength < 1)
+            {
+                MessageBox.Show("Please input value Height");
+                return;
+            }
+
+            txtLengthPyramid.Text = txtLengthPyramid.Text.Replace(".", ",");
+            txtWidthPyramid.Text = txtWidthPyramid.Text.Replace(".", ",");
+            txtHeightPyramid.Text = txtHeightPyramid.Text.Replace(".", ",");
+
+            for (int i = 0; i < txtLengthPyramid.TextLength; i++)
+            {
+                if (!checkNumber(txtLengthPyramid.Text[i]))
+                {
+                    MessageBox.Show("Please input numbers on Length");
+                    return;
+                }
+            }
+
+            for (int i = 0; i < txtWidthPyramid.TextLength; i++)
+            {
+                if (!checkNumber(txtWidthPyramid.Text[i]))
+                {
+                    MessageBox.Show("Please input numbers on Width");
+                    return;
+                }
+            }
+
+            for (int i = 0; i < txtHeightPyramid.TextLength; i++)
+            {
+                if (!checkNumber(txtHeightPyramid.Text[i]))
+                {
+                    MessageBox.Show("Please input numbers on Height");
+                    return;
+                }
+            }
+
+            Double length = Convert.ToDouble(txtLengthPyramid.Text);
+            Double width = Convert.ToDouble(txtWidthPyramid.Text);
+            Double height = Convert.ToDouble(txtHeightPyramid.Text);
+
+            Double triagleHeight1 = Math.Sqrt(Math.Pow(length / 2, 2) + Math.Pow(height, 2));
+            Double triagleHeight2 = Math.Sqrt(Math.Pow(width / 2, 2) + Math.Pow(height, 2));
+
+            Double surface = (length * width) + (length * triagleHeight2) + (width * triagleHeight1);
+            txtSurfacePyramid.Text = surface.ToString("##.###");
+            Double volume = (length * width * height)/3;
+            txtVolumePiramid.Text = volume.ToString("##.###");
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            txtT.Text = "";
+            txtR.Text = "";
+            txtS.Text = "";
+        }
+
+        private void btnRefreshCylinder_Click(object sender, EventArgs e)
+        {
+            txtTCylinder.Text = "";
+            txtRCylinder.Text = "";
+        }
+
+        private void btnRefreshSphere_Click(object sender, EventArgs e)
+        {
+            txtRSphere.Text = "";
+        }
+
+        private void btnRefreshPyramid_Click(object sender, EventArgs e)
+        {
+            txtLengthPyramid.Text = "";
+            txtWidthPyramid.Text = "";
+            txtHeightPyramid.Text = "";
         }
     }
 }

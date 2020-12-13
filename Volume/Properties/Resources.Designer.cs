@@ -83,6 +83,16 @@ namespace Volume.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Pyramid {
+            get {
+                object obj = ResourceManager.GetObject("Pyramid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Sphere {
             get {
                 object obj = ResourceManager.GetObject("Sphere", resourceCulture);
